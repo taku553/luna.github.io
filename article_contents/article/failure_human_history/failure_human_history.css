@@ -1,0 +1,533 @@
+@charset "UTF-8";
+/* CSS Document */
+
+html{
+	font-size: 100%;
+}
+
+body{
+	background-color: #fff;
+	background-size:cover;
+	width: 100%;
+	height: 100%;
+}
+
+a{
+	text-decoration: none;
+	color: #1f1f1f;
+}
+
+img{
+	max-width: 100%;
+	max-height: 100%;
+}
+
+
+header{
+	width: 100%;
+	height: 100%;
+	/*background-color: green;*/
+}
+
+h1{
+	color: #1f1f1f;
+	text-align: center;
+	font-family: 'Toppan Bunkyu Midashi Mincho',  serif;
+	font-size: 40px;
+	letter-spacing: 3px;
+	margin: 0 auto;
+	padding: 0;
+	max-width: 300px;
+	width: 80%;
+	cursor: pointer;
+	/*background-color: red;*/
+}
+	
+.content{
+	width: 330px;
+	margin: 50px auto;
+}
+
+.titile{
+	display: block;
+	text-align: center;
+}
+
+h2{
+	text-align: center;
+	letter-spacing: 2px;
+	position: relative;
+	padding: 0;
+	font-family: 'Toppan Bunkyu Midashi Mincho',  serif;
+}
+
+.sub-title{
+	display: block;
+	width: 300px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 30px;
+	text-align: center;
+	letter-spacing: 2px;
+	position: relative;
+	padding-left: 15px;
+	font-family: 'Toppan Bunkyu Midashi Mincho',  serif;
+	/*background-color: red;*/
+}
+
+h3{
+	text-align: left;
+}
+
+.content-img{
+	width: 70%;
+	display: block;
+	margin: 10px auto 40px auto;
+}
+
+/*目次*/
+.contents{
+	display: block;
+	/*background-color: yellow;*/
+	width: 80%;
+	height: 20%;
+	margin-top: 60px;
+	margin-bottom: 50px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0;
+}
+.contents_name_ja{
+	display: block;
+	font-family: 'Toppan Bunkyu Midashi Mincho', serif;
+	font-weight: bold;
+	font-size: x-large;
+	text-align: center;
+	letter-spacing: 3px;
+	margin: 0;
+	padding: 0;
+	/*background-color: red;*/
+}
+.contents_name_en{
+	display: block;
+	font-family: 'Times',  serif;
+	text-align: center;
+	font-weight: lighter;
+	font-size: small;
+	margin: 5px;
+	padding: 0;
+	/*background-color: green;*/
+}
+
+
+p{
+	font-family: YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "serif";
+	text-align: left;
+	font-size: 14px;
+	letter-spacing: 1px;
+}
+
+/*ハンバーガーメニュー*/
+.menu-btn{
+	position: fixed;
+	top: 24px;
+	right: 12px;
+	display: flex;
+	height: 30px;
+	width: 35px;
+	justify-content: center;
+	align-items: center;
+	z-index: 4;
+	cursor: pointer;
+}
+/*3本線に対する設定＆線（中線）の設定*/
+.menu-btn span,
+.menu-btn span::before,
+.menu-btn span::after{
+	content: " ";
+	display: block;
+	height: 3px;
+	width: 100%;
+	border-radius: 10px;
+	background-color: #1f1f1f;
+	position: absolute;
+	cursor: pointer;
+}
+/*上線*/
+.menu-btn span::before{
+	bottom: 14px;
+}
+/*下線*/
+.menu-btn span::after{
+	top: 14px;
+}
+/*キャンセルボタン（×）の設定*/
+#menu-btn-check:checked ~ .menu-btn span{
+	background-color: white;
+}
+#menu-btn-check:checked ~ .menu-btn span::before{
+	bottom: 0;
+	transform: rotate(45deg);
+}
+#menu-btn-check:checked ~ .menu-btn span::after{
+	top: 0;
+	transform: rotate(-45deg);
+}
+/*チェックボタンの非表示*/
+#menu-btn-check{
+	display: none;
+}
+/*メニューを画面外へ*/
+#menu-btn-check:checked ~ .menu-content{
+	right: 0;
+}
+
+/*サイドバーメニュー*/
+.menu-content{
+	position: fixed;
+	top: 0;
+	right: -46%;
+	width: 150px;
+	height: 600px;
+	z-index: 3;
+	background-color: white;
+	box-shadow: -5px 5px 11px #3f3f3f;
+	transition: all 0.5s;
+}
+.menu-content ul{
+	width: 100%;
+	height: 90%;
+	margin-top: 70px;
+	margin-left: auto;
+	padding: 0;
+}
+.menu-content li{
+	margin: 0 auto;
+	width: 100%;
+	height: 80px;
+}
+.menu-content ul li{
+	border: 1px solid white;
+	list-style: none;
+}
+.menu-content ul li a{
+	display: block;
+	font-family: 'Toppan Bunkyu Midashi Mincho', serif;
+	font-weight: bold;
+	font-size: large;
+	text-align: center;
+	letter-spacing: 3px;
+	position: relative;
+}
+.home-title-s span::after{
+	content: "Home";
+	width: 100px;
+	height: 20px;
+	/*background-color: yellow;*/
+	color: #1f1f1f;
+	display: block;
+	font-family: 'Times',  serif;
+	letter-spacing: 0;
+	text-align: center;
+	font-weight: lighter;
+	font-size: small;
+	margin: 5px auto;
+	padding: 0;
+}
+.contents-title-s span::after{
+	content: "Articles List";
+	width: 100px;
+	height: 20px;
+	/*background-color: yellow;*/
+	color: #1f1f1f;
+	display: block;
+	font-family: 'Times',  serif;
+	letter-spacing: 0;
+	text-align: center;
+	font-weight: lighter;
+	font-size: small;
+	margin: 5px auto;
+	padding: 0;
+}
+.category-title-s span::after{
+	content: "Category";
+	width: 100px;
+	height: 20px;
+	/*background-color: yellow;*/
+	color: #1f1f1f;
+	display: block;
+	font-family: 'Times',  serif;
+	letter-spacing: 0;
+	text-align: center;
+	font-weight: lighter;
+	font-size: small;
+	margin: 5px auto;
+	padding: 0;
+}
+.search-title-s span::after{
+	content: "Search";
+	width: 100px;
+	height: 20px;
+	/*background-color: yellow;*/
+	color: #1f1f1f;
+	display: block;
+	font-family: 'Times',  serif;
+	letter-spacing: 0;
+	text-align: center;
+	font-weight: lighter;
+	font-size: small;
+	margin: 5px auto;
+	padding: 0;
+}
+.video-title-s span::after{
+	content: "video";
+	width: 100px;
+	height: 20px;
+	/*background-color: yellow;*/
+	color: #1f1f1f;
+	display: block;
+	font-family: 'Times',  serif;
+	letter-spacing: 0;
+	text-align: center;
+	font-weight: lighter;
+	font-size: small;
+	margin: 5px auto;
+	padding: 0;
+}
+.profile-title-s span::after{
+	content: "Profile";
+	width: 100px;
+	height: 20px;
+	/*background-color: yellow;*/
+	color: #1f1f1f;
+	display: block;
+	font-family: 'Times',  serif;
+	letter-spacing: 0;
+	text-align: center;
+	font-weight: lighter;
+	font-size: small;
+	margin: 5px auto;
+	padding: 0;
+}
+
+/*記事一覧*/
+.container{
+	max-width: 800px;
+	margin: 30px auto;
+	/*background: purple;*/
+}
+.block{
+	width: 90%;
+	margin: 10px auto;
+	padding: 0;
+	box-sizing: border-box;
+	border: 1px solid #1f1f1f;
+	/*background: green;*/
+}
+.date{
+	width: 25%;
+	height: 10%;
+	margin-top: 5px;
+	margin-left: 5px;
+	margin-bottom: 0;
+	padding: 0;
+	/*background-color: yellow;*/
+	font-size: 15px;
+	font-family: 'Avenir Next Condensed', serif;
+	text-align: left;
+	font-style: italic;
+	letter-spacing: 1px;
+}
+.article_content{
+	display: flex;
+	justify-content: space-between;
+	background-color: white;
+}
+.article_thumnail{
+	max-width: 50%;
+	max-height: 50%;
+	margin-top: 0;
+	margin-left: 0;
+	padding: 0;
+	/*background-color: aqua;*/
+}
+.article_sentence{
+	width: 50%;
+	/*background-color: red;*/
+}
+.article_titile{
+	font-family: 'Toppan Bunkyu Midashi Mincho', serif;
+	font-size: 15px;
+	margin: 0;
+	padding: 0;
+	letter-spacing: 1px;
+	font-weight: bold;
+	text-align: center;	
+}
+.article_text_01{
+	font-size: 10px;
+	text-align: left;
+	padding: 5px;
+	margin-top: 10px;
+}
+.article_text{
+	font-size: 10px;
+	text-align: left;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+
+.book-info{
+	display: block;
+	width: 80%;
+	margin: 50px auto;
+	border: 1px solid #1f1f1f;
+	text-align: center;
+}
+.book-title{
+	display: inline-block;
+	width: 80%;
+	margin-top: 10px;
+	font-family: 'Toppan Bunkyu Midashi Mincho', serif;
+}
+
+#small-img{
+	display: block;
+	width: 60%;
+	margin: 20px auto;
+}
+
+/*もっと見るボタン*/
+.btn{
+	position: relative;
+	overflow: hidden;
+	border: none;
+	border-radius: 10px;
+	text-decoration: none;
+	width: 200px;
+	height: 50px;
+	display: block;
+	margin: 10px auto;
+	transition: ease .1s;
+	text-align: center;
+	background-color: #fcbb6a;
+}
+
+.btn span{
+	position: relative;
+	top: 12px;
+	z-index: 2;
+	color: #1f1f1f;
+	font-family:  'Noto Sans JP', sans-serif;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 600px;
+	font-style: normal;
+	font-size: 17px;
+	/*background-color: orange;*/
+}
+
+.btn:hover span{
+	margin: 0 auto;
+	color:#fff;
+	/*background-color: yellow;*/
+}
+
+.bgleft::before {
+	content:'';
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	background: #f08804;
+	width: 100%;
+	height: 100%;
+	transition: transform .6s cubic-bezier(.34,.01,.2,1) ;
+	transform: scale(0, 1);
+	transform-origin: right top;
+}
+
+.bgleft:hover::before{
+	transform-origin: left top;
+	transform: scale(1, 1);
+	/*background-color: green;*/
+}
+
+.more-articles{
+	display: block;
+	width: 150px;
+	text-align: center;
+	margin: 50px auto 30px auto;
+	font-family: 'Toppan Bunkyu Midashi Mincho', serif;
+	font-size: 20px;
+}
+
+/*フッター*/
+footer{
+	margin-top: 10px;
+	padding-bottom: 5px;
+	background: #333;
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+#alm_study {
+	color: #fff;
+	padding: 10px;
+	margin: 10px auto;
+}
+.footer_list{
+	max-width: 600px;
+	height: 100%;
+	margin-left:auto;
+	margin-right: auto;
+	margin-top: 20px;
+	margin-bottom: 30px;
+	padding: 0;
+	background-color: #333;
+	/*border: 1px solid #ee8392;*/
+	display: grid;
+	grid-gap: 30px;
+	grid-template-columns: repeat(2, minmax(150px, 600px));
+	justify-content: center;	
+}
+.footer_item{
+	/*border: 1px solid red;*/
+	margin: 0;
+	padding: 5px auto;
+}
+.contents_white{
+	color: white;
+}
+.footer_app{
+	/*background: green;*/
+	display: flex;
+	justify-content: space-around;
+	align-items: flex-end;
+	width: 60%;
+	margin: 20px auto;
+}
+
+#youtube_w{
+	width: 50px;
+	padding-top: 0;
+}
+.bar_line{
+	margin: 0 auto;
+	width: 1px;
+	height: 50px;
+	background: white;
+}
+#standfm_w{
+	width: 40px;
+	margin-top: 5px;
+}
+
+#copyright{
+	font-family: YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "serif";
+	display: inline-block;
+	width: 100%;
+	text-align: center;	
+	color: white;
+}/* CSS Document */
+

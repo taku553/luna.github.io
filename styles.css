@@ -1,0 +1,2122 @@
+@charset "UTF-8";
+/* CSS Document */
+
+html{
+	font-size: 100%;
+}
+
+body{
+	background-color: #fff;
+	background-size:cover;
+	width: 100%;
+	height: 100%;
+}
+
+a{
+	text-decoration: none;
+	color: #1f1f1f;
+}
+
+img{
+	max-width: 100%;
+	max-height: 100%;
+}
+
+
+header{
+	width: 100%;
+	height: 100%;
+	/*background-color: green;*/
+}
+
+h1{
+	margin: 20px auto 10px auto;
+	padding: 0;
+	max-width: 150px;
+	width: 80%;
+	cursor: pointer;
+	/*background-color: red;*/
+}
+	
+.catch_copy{
+	margin: 0 auto;
+	font-family: 'YuMincho', serif;
+	font-size: 12px;
+	text-align: center;
+	font-weight: lighter;		
+	/*background-color: orange;*/
+	}
+
+
+h2{
+	text-align: center;
+	letter-spacing: 2px;
+	position: relative;
+	padding: 0;
+}
+/*目次デザイン*/
+h2::before{
+	content: ' ';
+	position: absolute;
+	top: calc(50% - 1px);
+	left: 0;
+	width: 100%;
+	height: 1px;
+	background: #1f1f1f;
+}
+h2 span{
+	position: relative;
+	padding: 0 1em;
+	background-color: white;
+}
+
+/*目次*/
+.contents{
+	display: block;
+	/*background-color: yellow;*/
+	width: 80%;
+	height: 20%;
+	margin-top: 60px;
+	margin-bottom: 50px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0;
+}
+.contents_name_ja{
+	font-family: 'Toppan Bunkyu Midashi Mincho', serif;
+	font-weight: bold;
+	font-size: x-large;
+	text-align: center;
+	letter-spacing: 3px;
+	margin: 0;
+	padding: 0;
+	/*background-color: red;*/
+}
+.contents_name_en{
+	font-family: 'Times', serif;
+	text-align: center;
+	font-weight: lighter;
+	font-size: small;
+	margin: 5px;
+	padding: 0;
+	/*background-color: green;*/
+}
+
+h3{
+	text-align: center;
+	padding: 0;
+	/*background-color: red;*/
+}
+
+p{
+	font-family: YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "serif";
+	text-align: center;
+}
+
+/*ハンバーガーメニュー*/
+.menu-btn{
+	position: fixed;
+	top: 40px;
+	right: 15px;
+	display: flex;
+	height: 15px;
+	width: 35px;
+	justify-content: center;
+	align-items: center;
+	z-index: 4;
+	cursor: pointer;
+}
+/*3本線に対する設定＆線（中線）の設定*/
+.menu-btn span,
+.menu-btn span::before,
+.menu-btn span::after{
+	content: " ";
+	display: block;
+	height: 3px;
+	width: 100%;
+	border-radius: 10px;
+	background-color: #1f1f1f;
+	position: absolute;
+	cursor: pointer;
+}
+/*上線*/
+.menu-btn span::before{
+	bottom: 12px;
+}
+/*下線*/
+.menu-btn span::after{
+	top: 12px;
+}
+/*キャンセルボタン（×）の設定*/
+#menu-btn-check:checked ~ .menu-btn span{
+	background-color: white;
+}
+#menu-btn-check:checked ~ .menu-btn span::before{
+	bottom: 0;
+	transform: rotate(45deg);
+}
+#menu-btn-check:checked ~ .menu-btn span::after{
+	top: 0;
+	transform: rotate(-45deg);
+}
+/*チェックボタンの非表示*/
+#menu-btn-check{
+	display: none;
+}
+/*メニューを画面外へ*/
+#menu-btn-check:checked ~ .menu-content{
+	right: 0;
+}
+
+/*サイドバーメニュー*/
+.menu-content{
+	position: fixed;
+	top: 0;
+	right: -46%;
+	width: 150px;
+	height: 600px;
+	z-index: 3;
+	background-color: white;
+	box-shadow: -5px 5px 11px #3f3f3f;
+	transition: all 0.5s;
+}
+.menu-content ul{
+	width: 100%;
+	height: 90%;
+	margin-top: 70px;
+	margin-left: auto;
+	padding: 0;
+}
+.menu-content li{
+	margin: 0 auto;
+	width: 100%;
+	height: 80px;
+}
+.menu-content ul li{
+	border: 1px solid white;
+	list-style: none;
+}
+.menu-content ul li a{
+	display: block;
+	font-family: 'Toppan Bunkyu Midashi Mincho', serif;
+	font-weight: bold;
+	font-size: large;
+	text-align: center;
+	letter-spacing: 3px;
+	position: relative;
+}
+.home-title-s span::after{
+	content: "Home";
+	width: 100px;
+	height: 20px;
+	/*background-color: yellow;*/
+	color: #1f1f1f;
+	display: block;
+	font-family: 'Times', serif;
+	letter-spacing: 0;
+	text-align: center;
+	font-weight: lighter;
+	font-size: small;
+	margin: 5px auto;
+	padding: 0;
+}
+.contents-title-s span::after{
+	content: "Articles List";
+	width: 100px;
+	height: 20px;
+	/*background-color: yellow;*/
+	color: #1f1f1f;
+	display: block;
+	font-family: 'Times', serif;
+	letter-spacing: 0;
+	text-align: center;
+	font-weight: lighter;
+	font-size: small;
+	margin: 5px auto;
+	padding: 0;
+}
+.category-title-s span::after{
+	content: "Category";
+	width: 100px;
+	height: 20px;
+	/*background-color: yellow;*/
+	color: #1f1f1f;
+	display: block;
+	font-family: 'Times', serif;
+	letter-spacing: 0;
+	text-align: center;
+	font-weight: lighter;
+	font-size: small;
+	margin: 5px auto;
+	padding: 0;
+}
+.search-title-s span::after{
+	content: "Search";
+	width: 100px;
+	height: 20px;
+	/*background-color: yellow;*/
+	color: #1f1f1f;
+	display: block;
+	font-family: 'Times', serif;
+	letter-spacing: 0;
+	text-align: center;
+	font-weight: lighter;
+	font-size: small;
+	margin: 5px auto;
+	padding: 0;
+}
+.video-title-s span::after{
+	content: "Media";
+	width: 100px;
+	height: 20px;
+	/*background-color: yellow;*/
+	color: #1f1f1f;
+	display: block;
+	font-family: 'Times', serif;
+	letter-spacing: 0;
+	text-align: center;
+	font-weight: lighter;
+	font-size: small;
+	margin: 5px auto;
+	padding: 0;
+}
+.profile-title-s span::after{
+	content: "About";
+	width: 100px;
+	height: 20px;
+	/*background-color: yellow;*/
+	color: #1f1f1f;
+	display: block;
+	font-family: 'Times', serif;
+	letter-spacing: 0;
+	text-align: center;
+	font-weight: lighter;
+	font-size: small;
+	margin: 5px auto;
+	padding: 0;
+}
+
+/*記事一覧*/
+.container{
+	max-width: 800px;
+	margin: 30px auto;
+	/*background: purple;*/
+}
+.block{
+	width: 90%;
+	margin: 10px auto;
+	padding: 0;
+	box-sizing: border-box;
+	border: 1px solid #1f1f1f;
+	/*background: green;*/
+}
+.date{
+	width: 25%;
+	height: 10%;
+	margin-top: 5px;
+	margin-left: 5px;
+	margin-bottom: 0;
+	padding: 0;
+	/*background-color: yellow;*/
+	font-size: 15px;
+	font-family: 'Avenir Next Condensed', serif;
+	text-align: left;
+	font-style: italic;
+	letter-spacing: 1px;
+}
+.article_content{
+	display: flex;
+	justify-content: space-between;
+	background-color: white;
+}
+.article_thumnail{
+	max-width: 50%;
+	max-height: 50%;
+	margin-top: 0;
+	margin-left: 0;
+	padding: 0;
+	/*background-color: aqua;*/
+}
+.article_sentence{
+	width: 50%;
+	text-align: center;
+	/*background-color: red;*/
+}
+.article_title{
+	font-family: 'Toppan Bunkyu Midashi Mincho', serif;
+	font-size: 15px;
+	margin: 0;
+	padding: 0;
+	letter-spacing: 1px;
+	font-weight: bold;
+	text-align: center;	
+}
+.article_title_sub{
+	font-family: 'YuMincho +36p Kana', serif;
+	font-size: 12px;
+	margin: 0;
+	padding: 10px 0 10px 0;
+	letter-spacing: 1px;
+	font-weight: normal;
+	text-align: center;	
+}
+.article_text_01{
+	font-size: 10px;
+	text-align: left;
+	padding: 5px;
+	margin-top: 10px;
+}
+.article_text{
+	font-size: 10px;
+	text-align: left;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+/*カテゴリアイコン*/
+.category_grid {
+	display: grid;
+	gap: 10px;
+	grid-template-columns: 7em 7em 7em;
+	justify-content: center;
+	margin-bottom: 20px;
+	margin-left: auto;
+	margin-right: auto;
+}
+/*もっと見るボタン*/
+.btn{
+	position: relative;
+	overflow: hidden;
+	border: 1px solid #1f1f1f;
+	border-radius: 10px;
+	text-decoration: none;
+	width: 200px;
+	height: 50px;
+	display: block;
+	margin: 10px auto;
+	transition: ease .1s;
+	text-align: center;
+	/*background-color: red;*/
+}
+
+.btn span{
+	position: relative;
+	font-size: 15px;
+	top: 12px;
+	z-index: 2;
+	color: #1f1f1f;
+	font-family: 'Toppan Bunkyu Mincho', serif;
+	/*background-color: orange;*/
+}
+
+.btn:hover span{
+	margin: 0 auto;
+	color:#fff;
+	/*background-color: yellow;*/
+}
+
+.bgleft::before {
+	content:'';
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	background: #1f1f1f;
+	width: 100%;
+	height: 100%;
+	transition: transform .6s cubic-bezier(.34,.01,.2,1);
+	transform: scale(0, 1);
+	transform-origin: right top;
+}
+
+.bgleft:hover::before{
+	transform-origin: left top;
+	transform: scale(1, 1);
+	/*background-color: green;*/
+}
+
+/*検索ボタン*/
+.search_container{
+	box-sizing: border-box;
+	position:relative;
+	border: 0 none;
+	display: block;
+	margin: 20px auto;
+	padding: 3px auto;
+	border-radius: 20px;
+	max-width:350px;
+	height: 2.5em;
+	overflow: hidden;
+	background-color: white;
+	box-shadow: 0 1px 6px 0 #a0a0a0;
+}
+.search_container input[type="search"]{
+	border: none;
+	width: 70%;
+	outline:0;
+	margin: 10px 5px 10px 40px ;
+	font-family: 'Noto Sans JP', 'Roboto', sans-serif;
+	font-size: 13px;
+}
+::placeholder{
+	color: #A0A0A0;
+}
+#sbtn2{
+	cursor: pointer;
+	width: 10%;
+	height: 60%;
+	position:absolute; 
+	left: 5px;/*アイコン左右の位置調整*/
+	margin-top: 10px;
+	border:none;
+	background-color: white;
+}
+/*キャンセルボタンの差し替えと調整*/
+input[type="search"]::-webkit-search-cancel-button{
+	-webkit-appearance: none;
+	background-image: url(images/cross_icon.svg);
+	/*background-color: red;*/
+	background-size: cover;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	padding-right: 0;
+	width: 15px;
+	height: 15px;
+}
+
+/*検索コメント*/
+.search_comment{
+	font-family: 'Hiragino Kaku Gothic ProN', 'sans-serif';
+	font-weight: normal;
+	font-size: large;
+	text-align: center;
+	letter-spacing: 2px;
+	margin-top: 20px;
+	padding: 0;
+}
+
+
+
+/*カテゴリ名*/
+.category_name{
+	width: 80%;
+	margin: auto;
+	font-family: 'Toppan Bunkyu Mincho', serif;
+	font-size: medium;
+	text-align: center;
+	padding: 0;
+}
+
+/*standfm 埋め込み*/
+.standfm_url{
+	width: 80%;
+	margin: auto;
+}
+
+.twitter-url{
+	width: 80%;
+	margin: 50px auto;
+}
+
+/*.twitter-timeline{
+	width: 100%;
+}*/
+
+
+
+/*イラスト画像*/
+.me_illust{
+	width: 50%;
+	margin: 0 auto;
+}
+
+.about_site{
+	width: 70%;
+	margin: 10px auto;
+}
+
+.ab-inside{
+	font-family: YuMincho, "Yu Mincho", "Hiragino Mincho ProN", 
+	"serif";
+	font-size: 17px;
+	text-align: left;
+}
+
+
+/*配信*/
+.distribution {
+	width: 100%;
+	margin-top: 70px;
+	text-align: center;
+	/*background-color: green;*/
+}
+.notification{
+	font-family: 'Tsukushi A Round Gothic', "筑紫A丸ゴシック", "筑紫B丸ゴシック", serif;
+	font-weight:lighter;
+	font-size: x-large;
+	margin: 0 auto;
+	color: #1f1f1f;
+	/*background-color: yellow;*/
+}
+
+.distribution_platform{
+	font-family: "Avenir Next Condensed";
+	font-weight: normal; 
+	color: #1f1f1f;
+	/*background-color: orange;*/
+}
+.channel-name p{
+	font-family:"Yu Mincho", "Hiragino Mincho ProN", serif;
+	font-size: 15px;
+	color: #1f1f1f;
+}
+.distribution_container{
+	display: flex;
+	justify-content: space-evenly;
+	align-items: flex-end;
+}
+.distribution_item{
+	width: 40%;
+	/*background-color: orange;*/
+	text-align: center; /*text-alignは親要素に対して*/
+}
+.distribution_image{
+	display: inline-block;   /*inline-blockで幅指定とtext-alignの指定を可能に*/
+	object-fit: contain;
+	width: 70%;
+	margin: 0 auto;
+/*	background-color: red;*/
+}
+#youtube_icon{
+	position: relative;
+	top: 9px;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 0;
+	padding-bottom: 8px;
+}
+#dropshadow{
+	width: 60%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 0;
+	filter: drop-shadow(0 5px 2px #dfdfdf);
+}
+.advertise{
+	font-family: "Seravek", sans-serif;
+	font-size: 15px;
+	font-weight: lighter;
+	text-align: center;
+	color: #1f1f1f;
+}
+
+
+.contact{
+	width: 300px;
+	margin-left: 50px;
+	margin-top: 40px;
+}
+
+.con_sentence{
+	font-family: "Hiragino Kaku Gothic ProN", sans-serif;
+	font-size: 13px;
+	color: #1f1f1f;
+}
+
+.adress{
+	margin-top: 15px;
+}
+
+.e-mail{
+	text-align: left;	
+	font-family: "myriad-pro", sans-serif;
+	font-size: 20px;
+	color: #1f1f1f;	
+}
+
+
+/*フッター*/
+footer{
+	margin-top: 30px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	background: #333;
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+#luna_footer{
+	margin: 20px auto;
+	padding: 0;
+	width: 50%;
+	cursor: pointer;	
+}
+
+.footer_list{
+	max-width: 600px;
+	height: 100%;
+	margin-left:auto;
+	margin-right: auto;
+	margin-top: 20px;
+	margin-bottom: 30px;
+	padding: 0;
+	background-color: #333;
+	/*border: 1px solid #ee8392;*/
+	display: grid;
+	grid-gap: 30px;
+	grid-template-columns: repeat(2, minmax(150px, 600px));
+	justify-content: center;
+}
+.footer_item{
+	/*border: 1px solid red;*/
+	margin: 0;
+	padding: 5px auto;
+}
+.contents_white{
+	color: white;
+}
+.footer_app{
+	/*background: green;*/
+	width: 50%;
+	margin: 20px auto;
+}
+
+
+.app_item {
+	display: flex;
+	justify-content: space-around;
+	align-items: flex-end;
+	/*background-color: red;*/
+}
+
+.app{
+	width: 25px;
+	align-self: flex-end;
+}
+
+
+#copyright{
+	font-family: 'DIN Condensed',  'Arial Narrow',  serif;
+	display: inline-block;
+	width: 100%;
+	text-align: center;	
+	color: white;
+}
+
+
+/*--------------------タブレット------------------------*/
+@media screen and (min-width: 600px){
+	
+html{
+	font-size: 100%;
+}
+
+body{
+	background-color: #fff;
+	background-size:cover;
+	width: 100%;
+	height: 100%;
+}
+
+a{
+	text-decoration: none;
+	color: #1f1f1f;
+}
+
+img{
+	max-width: 100%;
+	max-height: 100%;
+}
+
+
+header{
+	width: 100%;
+	height: 100%;
+	/*background-color: green;*/
+}
+
+h1{
+	margin: 20px auto 10px auto;
+	padding: 0;
+	max-width: 200px;
+	width: 80%;
+	cursor: pointer;
+	/*background-color: red;*/
+}
+	
+.catch_copy{
+	margin: 0 auto;
+	font-family: 'YuMincho', serif;
+	font-size: 15px;
+	text-align: center;
+	font-weight: lighter;		
+	/*background-color: orange;*/
+}
+
+h2{
+	text-align: center;
+	letter-spacing: 2px;
+	position: relative;
+	padding: 0;
+}
+/*目次デザイン*/
+h2::before{
+	content: ' ';
+	position: absolute;
+	top: calc(50% - 1px);
+	left: 0;
+	width: 100%;
+	height: 1px;
+	background: #1f1f1f;
+}
+h2 span{
+	position: relative;
+	padding: 0 1em;
+	background-color: white;
+}
+	
+/*目次*/
+.contents{
+	display: block;
+	/*background-color: yellow;*/
+	width: 80%;
+	height: 20%;
+	margin-top: 60px;
+	margin-bottom: 50px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0;
+}
+.contents_name_ja{
+	font-family: 'Toppan Bunkyu Midashi Mincho', serif;
+	font-weight: bold;
+	font-size: x-large;
+	text-align: center;
+	letter-spacing: 3px;
+	margin: 0;
+	padding: 0;
+	/*background-color: red;*/
+}
+.contents_name_en{
+	font-family: 'Times', serif;
+	text-align: center;
+	font-weight: lighter;
+	font-size: small;
+	margin: 5px;
+	padding: 0;
+	/*background-color: green;*/
+}
+	
+h3{
+	text-align: center;
+	padding: 0;
+	/*background-color: red;*/
+}
+
+p{
+	font-family: YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "serif";
+	text-align: center;
+}
+	
+/*ハンバーガーメニュー*/
+.menu-btn{
+	position: fixed;
+	top: 24px;
+	right: 12px;
+	display: flex;
+	height: 35px;
+	width: 40px;
+	justify-content: center;
+	align-items: center;
+	z-index: 4;
+	cursor: pointer;
+}
+/*3本線に対する設定＆線（中線）の設定*/
+.menu-btn span,
+.menu-btn span::before,
+.menu-btn span::after{
+	content: " ";
+	display: block;
+	height: 3px;
+	width: 100%;
+	border-radius: 10px;
+	background-color: #1f1f1f;
+	position: absolute;
+	cursor: pointer;
+}
+/*上線*/
+.menu-btn span::before{
+	bottom: 14px;
+}
+/*下線*/
+.menu-btn span::after{
+	top: 14px;
+}
+/*キャンセルボタン（×）の設定*/
+#menu-btn-check:checked ~ .menu-btn span{
+	background-color: white;
+}
+#menu-btn-check:checked ~ .menu-btn span::before{
+	bottom: 0;
+	transform: rotate(45deg);
+}
+#menu-btn-check:checked ~ .menu-btn span::after{
+	top: 0;
+	transform: rotate(-45deg);
+}
+/*チェックボタンの非表示*/
+#menu-btn-check{
+	display: none;
+}
+/*メニューを画面外へ*/
+#menu-btn-check:checked ~ .menu-content{
+	right: 0;
+}
+
+/*サイドバーメニュー*/
+.menu-content{
+	position: fixed;
+	top: 0;
+	right: -46%;
+	width: 150px;
+	height: 600px;
+	z-index: 3;
+	background-color: white;
+	box-shadow: -5px 5px 11px #3f3f3f;
+	transition: all 0.5s;
+}
+.menu-content ul{
+	width: 100%;
+	height: 90%;
+	margin-top: 70px;
+	margin-left: auto;
+	padding: 0;
+}
+.menu-content li{
+	margin: 0 auto;
+	width: 100%;
+	height: 80px;
+}
+.menu-content ul li{
+	border: 1px solid white;
+	list-style: none;
+}
+.menu-content ul li a{
+	display: block;
+	font-family: 'Toppan Bunkyu Midashi Mincho', serif;
+	font-weight: bold;
+	font-size: large;
+	text-align: center;
+	letter-spacing: 3px;
+	position: relative;
+}
+.home-title-s span::after{
+	content: "Home";
+	width: 100px;
+	height: 20px;
+	/*background-color: yellow;*/
+	color: #1f1f1f;
+	display: block;
+	font-family: 'Times', serif;
+	letter-spacing: 0;
+	text-align: center;
+	font-weight: lighter;
+	font-size: small;
+	margin: 5px auto;
+	padding: 0;
+}
+.contents-title-s span::after{
+	content: "Articles List";
+	width: 100px;
+	height: 20px;
+	/*background-color: yellow;*/
+	color: #1f1f1f;
+	display: block;
+	font-family: 'Times', serif;
+	letter-spacing: 0;
+	text-align: center;
+	font-weight: lighter;
+	font-size: small;
+	margin: 5px auto;
+	padding: 0;
+}
+.category-title-s span::after{
+	content: "Category";
+	width: 100px;
+	height: 20px;
+	/*background-color: yellow;*/
+	color: #1f1f1f;
+	display: block;
+	font-family: 'Times', serif;
+	letter-spacing: 0;
+	text-align: center;
+	font-weight: lighter;
+	font-size: small;
+	margin: 5px auto;
+	padding: 0;
+}
+.search-title-s span::after{
+	content: "Search";
+	width: 100px;
+	height: 20px;
+	/*background-color: yellow;*/
+	color: #1f1f1f;
+	display: block;
+	font-family: 'Times', serif;
+	letter-spacing: 0;
+	text-align: center;
+	font-weight: lighter;
+	font-size: small;
+	margin: 5px auto;
+	padding: 0;
+}
+.video-title-s span::after{
+	content: "Media";
+	width: 100px;
+	height: 20px;
+	/*background-color: yellow;*/
+	color: #1f1f1f;
+	display: block;
+	font-family: 'Times', serif;
+	letter-spacing: 0;
+	text-align: center;
+	font-weight: lighter;
+	font-size: small;
+	margin: 5px auto;
+	padding: 0;
+}
+.profile-title-s span::after{
+	content: "About";
+	width: 100px;
+	height: 20px;
+	/*background-color: yellow;*/
+	color: #1f1f1f;
+	display: block;
+	font-family: 'Times', serif;
+	letter-spacing: 0;
+	text-align: center;
+	font-weight: lighter;
+	font-size: small;
+	margin: 5px auto;
+	padding: 0;
+}
+	
+/*記事一覧*/
+.container{
+	max-width: 400px;
+	margin: 30px auto;
+	/*background: purple;*/
+}
+.block{
+	width: 100%;
+	margin: 10px auto;
+	padding: 0;
+	box-sizing: border-box;
+	border: 1px solid #1f1f1f;
+	/*background: green;*/
+}
+.date{
+	width: 25%;
+	height: 10%;
+	margin-top: 5px;
+	margin-left: 5px;
+	margin-bottom: 0;
+	padding: 0;
+	/*background-color: yellow;*/
+	font-size: 15px;
+	font-family: 'Avenir Next Condensed', serif;
+	text-align: left;
+	font-style: italic;
+	letter-spacing: 1px;
+}
+.article_content{
+	display: flex;
+	justify-content: space-between;
+	background-color: white;
+}
+.article_thumnail{
+	max-width: 50%;
+	max-height: 50%;
+	margin-top: 0;
+	margin-left: 0;
+	padding: 0;
+	/*background-color: aqua;*/
+}
+.article_sentence{
+	width: 50%;
+	text-align: center;
+	/*background-color: red;*/
+}
+.article_title{
+	font-family: 'Toppan Bunkyu Midashi Mincho', serif;
+	font-size: 15px;
+	margin: 0;
+	padding: 0;
+	letter-spacing: 1px;
+	font-weight: bold;
+	text-align: center;	
+}
+.article_title_sub{
+	font-family: 'YuMincho +36p Kana', serif;
+	font-size: 12px;
+	margin: 0;
+	padding: 10px 0 10px 0;
+	letter-spacing: 1px;
+	font-weight: normal;
+	text-align: center;	
+}
+.article_text_01{
+	font-size: 10px;
+	text-align: left;
+	padding: 5px;
+	margin-top: 10px;
+}
+.article_text{
+	font-size: 10px;
+	text-align: left;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+	
+/*カテゴリアイコン*/
+.category_grid {
+	display: grid;
+	gap: 10px;
+	grid-template-columns: 7em 7em 7em;
+	justify-content: center;
+	margin-bottom: 20px;
+	margin-left: auto;
+	margin-right: auto;
+}
+/*もっと見るボタン*/
+.btn{
+	position: relative;
+	overflow: hidden;
+	border: 1px solid #1f1f1f;
+	border-radius: 10px;
+	text-decoration: none;
+	width: 200px;
+	height: 50px;
+	display: block;
+	margin: 10px auto;
+	transition: ease .1s;
+	text-align: center;
+	/*background-color: red;*/
+}
+
+.btn span{
+	position: relative;
+	font-size: 15px;
+	top: 12px;
+	z-index: 2;
+	color: #1f1f1f;
+	font-family: 'Toppan Bunkyu Mincho', serif;
+	/*background-color: orange;*/
+}
+
+.btn:hover span{
+	margin: 0 auto;
+	color:#fff;
+	/*background-color: yellow;*/
+}
+
+.bgleft::before {
+	content:'';
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	background: #1f1f1f;
+	width: 100%;
+	height: 100%;
+	transition: transform .6s cubic-bezier(.34,.01,.2,1);
+	transform: scale(0, 1);
+	transform-origin: right top;
+}
+
+.bgleft:hover::before{
+	transform-origin: left top;
+	transform: scale(1, 1);
+	/*background-color: green;*/
+}
+
+/*検索ボタン*/
+.search_container{
+	box-sizing: border-box;
+	position:relative;
+	border: 0 none;
+	display: block;
+	margin: 20px auto;
+	padding: 3px auto;
+	border-radius: 20px;
+	max-width:350px;
+	height: 2.5em;
+	overflow: hidden;
+	background-color: white;
+	box-shadow: 0 1px 6px 0 #a0a0a0;
+}
+.search_container input[type="search"]{
+	border: none;
+	width: 70%;
+	outline:0;
+	margin: 10px 5px 10px 40px ;
+	font-family: 'Noto Sans JP', 'Roboto', sans-serif;
+	font-size: 13px;
+}
+::placeholder{
+	color: #A0A0A0;
+}
+#sbtn2{
+	cursor: pointer;
+	width: 10%;
+	height: 60%;
+	position:absolute; 
+	left: 5px;/*アイコン左右の位置調整*/
+	margin-top: 10px;
+	border:none;
+	background-color: white;
+}
+/*キャンセルボタンの差し替えと調整*/
+input[type="search"]::-webkit-search-cancel-button{
+	-webkit-appearance: none;
+	background-image: url(images/cross_icon.svg);
+	/*background-color: red;*/
+	background-size: cover;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	padding-right: 0;
+	width: 15px;
+	height: 15px;
+}
+
+/*検索コメント*/
+.search_comment{
+	font-family: 'Hiragino Kaku Gothic ProN', 'sans-serif';
+	font-weight: normal;
+	font-size: x-large;
+	text-align: center;
+	letter-spacing: 2px;
+	margin-top: 60px;
+	padding: 0;
+}
+
+
+/*カテゴリ名*/
+.category_name{
+	width: 50%;
+	margin: auto;
+	font-family: 'Toppan Bunkyu Mincho', serif;
+	font-size: medium;
+	text-align: center;
+	padding: 0;
+}
+	
+/*standfm 埋め込み*/
+.standfm_url{
+	width: 60%;
+	margin: auto;
+}
+
+/*twitter 埋め込み*/
+.twitter-url{
+	width: 60%;
+	margin: 80px auto;
+}
+	
+/*.twitter-timeline{
+	width: 100%;
+}*/
+	
+
+/*イラスト画像*/
+.me_illust{
+	width: 40%;
+	margin: 0 auto;
+}
+
+.about_site{
+	width: 70%;
+	margin: 10px auto;
+}
+
+.ab-inside{
+	font-family: YuMincho, "Yu Mincho", "Hiragino Mincho ProN", 
+	"serif";
+	font-size: 20px;
+	text-align: left;
+}
+	
+	
+/*配信*/
+.distribution {
+	width: 100%;
+	margin-top: 70px;
+	text-align: center;
+	/*background-color: green;*/
+}
+.notification{
+	font-family: 'Tsukushi A Round Gothic', "筑紫A丸ゴシック レギュラー", "筑紫B丸ゴシック レギュラー", serif;
+	font-weight:lighter;
+	font-size: 30px;
+	margin: 0 auto;
+	color: #1f1f1f;
+	/*background-color: yellow;*/
+}
+
+.distribution_platform{
+	font-family: "Avenir Next Condensed";
+	font-size: 25px;
+	font-weight: normal; 
+	color: #1f1f1f;
+	/*background-color: orange;*/
+}
+.channel-name p{
+	font-family:"Yu Mincho", "Hiragino Mincho ProN", "serif";
+	font-size: 20px;
+	color: #1f1f1f;
+}
+.distribution_container{
+	display: flex;
+	justify-content: space-evenly;
+	align-items: flex-end;
+}
+.distribution_item{
+	width: 30%;
+	/*background-color: orange;*/
+	text-align: center; /*text-alignは親要素に対して*/
+}
+.distribution_image{
+	display: inline-block;   /*inline-blockで幅指定とtext-alignの指定を可能に*/
+	object-fit: contain;
+	width: 50%;
+	margin: 0 auto;
+/*	background-color: red;*/
+}
+#youtube_icon{
+	position: relative;
+	top: 9px;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 0;
+	padding-bottom: 8px;
+}
+#dropshadow{
+	width: 60%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 0;
+	filter: drop-shadow(3px 3px 5px #7f7f7f);
+}
+.advertise{
+	font-family: "Seravek","sans-selif";
+	font-size: 15px;
+	font-weight: lighter;
+	text-align: center;
+	color: #1f1f1f;
+}
+
+	
+.contact{
+	width: 300px;
+	margin-left: 130px;
+	margin-top: 40px;
+}
+
+.con_sentence{
+	font-family: "Hiragino Kaku Gothic ProN", sans-serif;
+	font-size: 15px;
+	color: #1f1f1f;
+}
+
+.adress{
+	margin-top: 15px;
+}
+
+.e-mail{
+	text-align: left;	
+	font-family: "myriad-pro", sans-serif;
+	font-size: 23px;
+	color: #1f1f1f;	
+}	
+
+/*フッター*/
+footer{
+	margin-top: 30px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	background: #333;
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+#luna_footer{
+	margin: 20px auto;
+	padding: 0;
+	width: 50%;
+	cursor: pointer;	
+}
+
+.footer_list{
+	max-width: 600px;
+	height: 100%;
+	margin-left:auto;
+	margin-right: auto;
+	margin-top: 20px;
+	margin-bottom: 30px;
+	padding: 0;
+	background-color: #333;
+	/*border: 1px solid #ee8392;*/
+	display: grid;
+	grid-gap: 30px;
+	grid-template-columns: repeat(2, minmax(150px, 600px));
+	justify-content: center;
+}
+.footer_item{
+	/*border: 1px solid red;*/
+	margin: 0;
+	padding: 5px auto;
+}
+.contents_white{
+	color: white;
+}
+.footer_app{
+	/*background: green;*/
+	width: 50%;
+	margin: 20px auto;
+}
+
+
+.app_item {
+	display: flex;
+	justify-content: space-around;
+	align-items: flex-end;
+	/*background-color: red;*/
+}
+
+.app{
+	width: 25px;
+	align-self: flex-end;
+}
+
+
+#copyright{
+	font-family: 'DIN Condensed',  'Arial Narrow',  serif;
+	display: inline-block;
+	width: 100%;
+	text-align: center;	
+	color: white;
+}
+
+}
+
+
+/*--------------------デスクトップ------------------------*/
+@media screen and (min-width: 1025px){
+	
+html{
+	font-size: 100%;
+}
+
+body{
+	background-color: #fff;
+	background-size:cover;
+	width: 100%;
+	height: 100%;
+}
+
+a{
+	text-decoration: none;
+	color: #1f1f1f;
+}
+
+img{
+	max-width: 100%;
+	max-height: 100%;
+}
+
+
+header{
+	width: 100%;
+	height: 100%;
+	/*background-color: green;*/
+}
+
+h1{
+	margin: 20px auto 10px auto;
+	padding: 0;
+	max-width: 300px;
+	width: 80%;
+	cursor: pointer;
+	/*background-color: red;*/
+}
+	
+.catch_copy{
+	margin: 0 auto;
+	font-family: 'YuMincho', serif;
+	font-size: 20px;
+	text-align: center;
+	font-weight: lighter;		
+	/*background-color: orange;*/
+}
+	
+
+h2{
+	text-align: center;
+	letter-spacing: 2px;
+	position: relative;
+	padding: 0;
+}
+/*目次デザイン*/
+h2::before{
+	content: ' ';
+	position: absolute;
+	top: calc(50% - 1px);
+	left: 0;
+	width: 100%;
+	height: 1px;
+	background: #1f1f1f;
+}
+h2 span{
+	position: relative;
+	padding: 0 1em;
+	background-color: white;
+}
+	
+/*目次*/
+.contents{
+	display: block;
+	/*background-color: yellow;*/
+	width: 80%;
+	height: 20%;
+	margin-top: 60px;
+	margin-bottom: 50px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0;
+}
+.contents_name_ja{
+	font-family: 'Toppan Bunkyu Midashi Mincho', serif;
+	font-weight: bold;
+	font-size: xx-large;
+	text-align: center;
+	letter-spacing: 3px;
+	margin: 0;
+	padding: 0;
+	/*background-color: red;*/
+}
+.contents_name_en{
+	font-family: 'Times', serif;
+	text-align: center;
+	font-weight: lighter;
+	font-size: medium;
+	margin: 5px;
+	padding: 0;
+	/*background-color: green;*/
+}
+	
+h3{
+	text-align: center;
+	padding: 0;
+	/*background-color: red;*/
+}
+
+p{
+	font-family: YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "serif";
+	text-align: center;
+}
+	
+/*ハンバーガーメニュー*/
+.menu-btn{
+	position: fixed;
+	top: 40px;
+	right: 30px;
+	display: flex;
+	height: 45px;
+	width: 50px;
+	justify-content: center;
+	align-items: center;
+	z-index: 4;
+	cursor: pointer;
+}
+/*3本線に対する設定＆線（中線）の設定*/
+.menu-btn span,
+.menu-btn span::before,
+.menu-btn span::after{
+	content: " ";
+	display: block;
+	height: 3px;
+	width: 100%;
+	border-radius: 10px;
+	background-color: #1f1f1f;
+	position: absolute;
+	cursor: pointer;
+}
+/*上線*/
+.menu-btn span::before{
+	bottom: 14px;
+}
+/*下線*/
+.menu-btn span::after{
+	top: 14px;
+}
+/*キャンセルボタン（×）の設定*/
+#menu-btn-check:checked ~ .menu-btn span{
+	background-color: white;
+}
+#menu-btn-check:checked ~ .menu-btn span::before{
+	bottom: 0;
+	transform: rotate(45deg);
+}
+#menu-btn-check:checked ~ .menu-btn span::after{
+	top: 0;
+	transform: rotate(-45deg);
+}
+/*チェックボタンの非表示*/
+#menu-btn-check{
+	display: none;
+}
+/*メニューを画面外へ*/
+#menu-btn-check:checked ~ .menu-content{
+	right: 0;
+}
+
+/*サイドバーメニュー*/
+.menu-content{
+	position: fixed;
+	top: 0;
+	right: -46%;
+	width: 200px;
+	height: 700px;
+	z-index: 3;
+	background-color: white;
+	box-shadow: -5px 5px 11px #3f3f3f;
+	transition: all 0.5s;
+}
+.menu-content ul{
+	width: 100%;
+	height: 90%;
+	margin-top: 110px;
+	margin-left: auto;
+	padding: 0;
+}
+.menu-content li{
+	margin: 0 auto;
+	width: 100%;
+	height: 80px;
+}
+.menu-content ul li{
+	border: 1px solid white;
+	list-style: none;
+}
+.menu-content ul li a{
+	display: block;
+	font-family: 'Toppan Bunkyu Midashi Mincho', serif;
+	font-weight: bold;
+	font-size: x-large;
+	text-align: center;
+	letter-spacing: 3px;
+	position: relative;
+}
+.home-title-s span::after{
+	content: "Home";
+	width: 100px;
+	height: 20px;
+	/*background-color: yellow;*/
+	color: #1f1f1f;
+	display: block;
+	font-family: 'Times', serif;
+	letter-spacing: 0;
+	text-align: center;
+	font-weight: lighter;
+	font-size: medium;
+	margin: 5px auto;
+	padding: 0;
+}
+.contents-title-s span::after{
+	content: "Articles List";
+	width: 100px;
+	height: 20px;
+	/*background-color: yellow;*/
+	color: #1f1f1f;
+	display: block;
+	font-family: 'Times', serif;
+	letter-spacing: 0;
+	text-align: center;
+	font-weight: lighter;
+	font-size: medium;
+	margin: 5px auto;
+	padding: 0;
+}
+.category-title-s span::after{
+	content: "Category";
+	width: 100px;
+	height: 20px;
+	/*background-color: yellow;*/
+	color: #1f1f1f;
+	display: block;
+	font-family: 'Times', serif;
+	letter-spacing: 0;
+	text-align: center;
+	font-weight: lighter;
+	font-size: medium;
+	margin: 5px auto;
+	padding: 0;
+}
+.search-title-s span::after{
+	content: "Search";
+	width: 100px;
+	height: 20px;
+	/*background-color: yellow;*/
+	color: #1f1f1f;
+	display: block;
+	font-family: 'Times', serif;
+	letter-spacing: 0;
+	text-align: center;
+	font-weight: lighter;
+	font-size: medium;
+	margin: 5px auto;
+	padding: 0;
+}
+.video-title-s span::after{
+	content: "Media";
+	width: 100px;
+	height: 20px;
+	/*background-color: yellow;*/
+	color: #1f1f1f;
+	display: block;
+	font-family: 'Times', serif;
+	letter-spacing: 0;
+	text-align: center;
+	font-weight: lighter;
+	font-size: medium;
+	margin: 5px auto;
+	padding: 0;
+}
+.profile-title-s span::after{
+	content: "About";
+	width: 100px;
+	height: 20px;
+	/*background-color: yellow;*/
+	color: #1f1f1f;
+	display: block;
+	font-family: 'Times', serif;
+	letter-spacing: 0;
+	text-align: center;
+	font-weight: lighter;
+	font-size: medium;
+	margin: 5px auto;
+	padding: 0;
+}
+	
+/*記事一覧*/
+.container{
+	max-width: 600px;
+	margin: 30px auto;
+	/*background: purple;*/
+}
+.block{
+	width: 100%;
+	margin: 10px auto;
+	padding: 0;
+	box-sizing: border-box;
+	border: 1px solid #1f1f1f;
+	/*background: green;*/
+}
+.date{
+	width: 25%;
+	height: 10%;
+	margin-top: 5px;
+	margin-left: 5px;
+	margin-bottom: 0;
+	padding: 0;
+	/*background-color: yellow;*/
+	font-size: 15px;
+	font-family: 'Avenir Next Condensed', serif;
+	text-align: left;
+	font-style: italic;
+	letter-spacing: 1px;
+}
+.article_content{
+	display: flex;
+	justify-content: space-between;
+	background-color: white;
+}
+.article_thumnail{
+	max-width: 50%;
+	max-height: 50%;
+	margin-top: 0;
+	margin-left: 0;
+	padding: 0;
+	/*background-color: aqua;*/
+}
+.article_sentence{
+	width: 50%;
+	text-align: center;
+	/*background-color: red;*/
+}
+.article_title{
+	font-family: 'Toppan Bunkyu Midashi Mincho', serif;
+	font-size: 20px;
+	margin: 0;
+	padding: 0;
+	letter-spacing: 1px;
+	font-weight: bold;
+	text-align: center;	
+}
+.article_title_sub{
+	font-family: 'YuMincho +36p Kana', serif;
+	font-size: 15px;
+	margin: 0;
+	padding: 10px 0 10px 0;
+	letter-spacing: 1px;
+	font-weight: normal;
+	text-align: center;	
+}
+.article_text_01{
+	font-size: 10px;
+	text-align: left;
+	padding: 5px;
+	margin-top: 10px;
+}
+.article_text{
+	font-size: 10px;
+	text-align: left;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+	
+/*カテゴリアイコン*/
+.category_grid {
+	display: grid;
+	gap: 10px;
+	grid-template-columns: 12em 12em 12em;
+	justify-content: center;
+	margin-bottom: 20px;
+	margin-left: auto;
+	margin-right: auto;
+}
+/*もっと見るボタン*/
+.btn{
+	position: relative;
+	overflow: hidden;
+	border: 1px solid #1f1f1f;
+	border-radius: 10px;
+	text-decoration: none;
+	width: 300px;
+	height: 70px;
+	display: block;
+	margin: 10px auto;
+	transition: ease .1s;
+	text-align: center;
+	/*background-color: red;*/
+}
+
+.btn span{
+	position: relative;
+	font-size: 20px;
+	top: 20px;
+	z-index: 2;
+	color: #1f1f1f;
+	font-family: 'Toppan Bunkyu Mincho', serif;
+	/*background-color: orange;*/
+}
+
+.btn:hover span{
+	margin: 0 auto;
+	color:#fff;
+	/*background-color: yellow;*/
+}
+
+.bgleft::before {
+	content:'';
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	background: #1f1f1f;
+	width: 100%;
+	height: 100%;
+	transition: transform .6s cubic-bezier(.34,.01,.2,1);
+	transform: scale(0, 1);
+	transform-origin: right top;
+}
+
+.bgleft:hover::before{
+	transform-origin: left top;
+	transform: scale(1, 1);
+	/*background-color: green;*/
+}
+
+/*検索ボタン*/
+.search_container{
+	box-sizing: border-box;
+	position:relative;
+	border: 0 none;
+	display: block;
+	margin: 20px auto;
+	padding: 3px auto;
+	border-radius: 20px;
+	max-width:500px;
+	height: 2.7em;
+	overflow: hidden;
+	background-color: white;
+	box-shadow: 0 1px 6px 0 #a0a0a0;
+}
+.search_container input[type="search"]{
+	border: none;
+	width: 70%;
+	outline:0;
+	margin: 10px 5px 10px 40px ;
+	font-family: 'Noto Sans JP', 'Roboto', sans-serif;
+	font-size: 13px;
+}
+::placeholder{
+	color: #A0A0A0;
+}
+#sbtn2{
+	cursor: pointer;
+	width: 10%;
+	height: 60%;
+	position:absolute; 
+	left: 5px;/*アイコン左右の位置調整*/
+	margin-top: 10px;
+	border:none;
+	background-color: white;
+}
+/*キャンセルボタンの差し替えと調整*/
+input[type="search"]::-webkit-search-cancel-button{
+	-webkit-appearance: none;
+	background-image: url(images/cross_icon.svg);
+	/*background-color: red;*/
+	background-size: cover;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	padding-right: 0;
+	width: 15px;
+	height: 15px;
+}
+
+/*検索コメント*/
+.search_comment{
+	font-family: 'Hiragino Kaku Gothic ProN', 'sans-serif';
+	font-weight: normal;
+	font-size: xx-large;
+	text-align: center;
+	letter-spacing: 2px;
+	margin-top: 60px;
+	padding: 0;
+}
+
+
+/*カテゴリ名*/
+.category_name{
+	width: 50%;
+	margin: auto;
+	font-family: 'Toppan Bunkyu Mincho', serif;
+	font-size: large;
+	text-align: center;
+	padding: 0;
+}
+
+	
+/*standfm 埋め込み*/
+.standfm_url{
+	width: 60%;
+	margin: auto;
+}
+
+/*twitter 埋め込み*/
+.twitter-url{
+	width: 60%;
+	margin: 80px auto;
+}
+	
+/*.twitter-timeline{
+	width: 100%;
+}*/
+	
+
+/*イラスト画像*/
+.me_illust{
+	width: 30%;
+	margin: 0 auto;
+}
+
+.about_site{
+	width: 70%;
+	margin: 10px auto;
+}
+
+.ab-inside{
+	font-family: YuMincho, "Yu Mincho", "Hiragino Mincho ProN", 
+	"serif";
+	font-size: 30px;
+	text-align: left;
+}
+	
+	
+	
+/*配信*/
+.distribution {
+	width: 100%;
+	margin-top: 70px;
+	text-align: center;
+	/*background-color: green;*/
+}
+.notification{
+	font-family: 'Tsukushi A Round Gothic', "筑紫A丸ゴシック レギュラー", "筑紫B丸ゴシック レギュラー", serif;
+	font-weight:lighter;
+	font-size: 50px;
+	margin: 0 auto;
+	color: #1f1f1f;
+	/*background-color: yellow;*/
+}
+
+.distribution_platform{
+	font-family: "Avenir Next Condensed";
+	font-size: 40px;
+	font-weight: normal; 
+	color: #1f1f1f;
+	/*background-color: orange;*/
+}
+.channel-name p{
+	font-family:"Yu Mincho", "Hiragino Mincho ProN", "serif";
+	font-size: 30px;
+	color: #1f1f1f;
+}
+.distribution_container{
+	display: flex;
+	justify-content: space-evenly;
+	align-items: flex-end;
+}
+.distribution_item{
+	width: 30%;
+	/*background-color: orange;*/
+	text-align: center; /*text-alignは親要素に対して*/
+}
+.distribution_image{
+	display: inline-block;   /*inline-blockで幅指定とtext-alignの指定を可能に*/
+	object-fit: contain;
+	width: 50%;
+	margin: 0 auto;
+/*	background-color: red;*/
+}
+#youtube_icon{
+	position: relative;
+	top: 9px;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 0;
+	padding-bottom: 8px;
+}
+#dropshadow{
+	width: 60%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 0;
+	filter: drop-shadow(3px 3px 5px #7f7f7f);
+}
+.advertise{
+	font-family: "Seravek","sans-selif";
+	font-size: 15px;
+	font-weight: lighter;
+	text-align: center;
+	color: #1f1f1f;
+}
+	
+
+.contact{
+	width: 500px;
+	margin-left: 220px;
+	margin-top: 40px;
+}
+
+.con_sentence{
+	font-family: "Hiragino Kaku Gothic ProN", sans-serif;
+	font-size: 30px;
+	color: #1f1f1f;
+}
+
+.adress{
+	margin-top: 15px;
+}
+
+.e-mail{
+	text-align: left;	
+	font-family: "myriad-pro", sans-serif;
+	font-size: 40px;
+	color: #1f1f1f;	
+}	
+
+/*フッター*/
+footer{
+	margin-top: 30px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	background: #333;
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+#luna_footer{
+	margin: 20px auto;
+	padding: 0;
+	width: 50%;
+	cursor: pointer;	
+}
+
+.footer_list{
+	max-width: 600px;
+	height: 100%;
+	margin-left:auto;
+	margin-right: auto;
+	margin-top: 20px;
+	margin-bottom: 30px;
+	padding: 0;
+	background-color: #333;
+	/*border: 1px solid #ee8392;*/
+	display: grid;
+	grid-gap: 30px;
+	grid-template-columns: repeat(2, minmax(150px, 600px));
+	justify-content: center;
+}
+.footer_item{
+	/*border: 1px solid red;*/
+	margin: 0;
+	padding: 5px auto;
+}
+.contents_white{
+	color: white;
+}
+.footer_app{
+	/*background: green;*/
+	width: 30%;
+	margin: 20px auto;
+}
+
+
+.app_item {
+	display: flex;
+	justify-content: space-around;
+	align-items: flex-end;
+	/*background-color: red;*/
+}
+
+.app{
+	width: 40px;
+	align-self: flex-end;
+}
+
+
+#copyright{
+	font-family: 'DIN Condensed',  'Arial Narrow',  serif;
+	display: inline-block;
+	width: 100%;
+	font-size: 20px;
+	text-align: center;	
+	color: white;
+}
+}	
